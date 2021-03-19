@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--1 配置User对象创建-->
+    <bean id="user" class="com.atguigu.spring5.User"></bean>
+
+    <!--2 set方法注入属性-->
+    <bean id="book" class="com.atguigu.spring5.Book">
+        <!--使用property完成属性注入
+            name：类里面的属性名称
+            value：向属性中注入的值
+        -->
+        <property name="bname" value="Java讲义"></property>
+        <property name="bauthor" value="刘建华"></property>
+        <!--给属性中注入null值-->
+<!--        <property name="address">-->
+<!--            <null/>-->
+<!--        </property>-->
+
+        <!--给属性中注入含有特殊符号的值例如：<<>>
+            注入时有两种写法：
+            1：转义，例如：将<>转义为&lt;&gt;
+            2:把带有特殊符号的内容写到CDATA中去：写法【<![CDATA[]]>】
+        <property name="address">
+            <value><![CDATA[<<山西>>]]></value>
+        </property>
+        -->
+        <property name="address">
+            <value><![CDATA[<<山西>>]]></value>
+        </property>
+    </bean>
+    <!--2 set方法注入属性-->
+<!--    <bean id="book" class="com.atguigu.spring5.Book" p:bname="PHP" p:bauthor="刘峙杰"></bean>-->
+
+    <!--3 有参数构造注入属性-->
+    <bean id="orders" class="com.atguigu.spring5.Orders">
+        <constructor-arg name="oname" value="手机"></constructor-arg>
+        <constructor-arg name="address" value="中国"></constructor-arg>
+        <!--有参构造注入属性的另一种写法通过索引去注入（且与属性名注入的方式不可以共存）-->
+        <!--<constructor-arg index="0" value=""></constructor-arg>-->
+    </bean>
+</beans>
