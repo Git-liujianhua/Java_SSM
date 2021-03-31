@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/demoreactor/demoreactor.iml" filepath="$PROJECT_DIR$/demoreactor/demoreactor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring5_demo9/spring5_demo9.iml" filepath="$PROJECT_DIR$/spring5_demo9/spring5_demo9.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_demo/spring_demo.iml" filepath="$PROJECT_DIR$/spring_demo/spring_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_demo2/spring_demo2.iml" filepath="$PROJECT_DIR$/spring_demo2/spring_demo2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_demo3/spring_demo3.iml" filepath="$PROJECT_DIR$/spring_demo3/spring_demo3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_demo4/spring_demo4.iml" filepath="$PROJECT_DIR$/spring_demo4/spring_demo4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_demo5/spring_demo5.iml" filepath="$PROJECT_DIR$/spring_demo5/spring_demo5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring_txdemo1/spring_txdemo1.iml" filepath="$PROJECT_DIR$/spring_txdemo1/spring_txdemo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webfluxdemo1/webfluxdemo1.iml" filepath="$PROJECT_DIR$/webfluxdemo1/webfluxdemo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webfluxdemo2/webfluxdemo2.iml" filepath="$PROJECT_DIR$/webfluxdemo2/webfluxdemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch01_hellomybatis/mybatis_ch01_hellomybatis.iml" filepath="$PROJECT_DIR$/mybatis_ch01_hellomybatis/mybatis_ch01_hellomybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch02_dao/mybatis_ch02_dao.iml" filepath="$PROJECT_DIR$/mybatis_ch02_dao/mybatis_ch02_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch03_dao_proxy/mybatis_ch03_dao_proxy.iml" filepath="$PROJECT_DIR$/mybatis_ch03_dao_proxy/mybatis_ch03_dao_proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch04_param/mybatis_ch04_param.iml" filepath="$PROJECT_DIR$/mybatis_ch04_param/mybatis_ch04_param.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch05_return_result/mybatis_ch05_return_result.iml" filepath="$PROJECT_DIR$/mybatis_ch05_return_result/mybatis_ch05_return_result.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_ch06_dynameic_sql/mybatis_ch06_dynameic_sql.iml" filepath="$PROJECT_DIR$/mybatis_ch06_dynameic_sql/mybatis_ch06_dynameic_sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demo/spring5_demo.iml" filepath="$PROJECT_DIR$/spring5_demo/spring5_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demo2/spring5_demo2.iml" filepath="$PROJECT_DIR$/spring5_demo2/spring5_demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demo3/spring5_demo3.iml" filepath="$PROJECT_DIR$/spring5_demo3/spring5_demo3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demo4/spring5_demo4.iml" filepath="$PROJECT_DIR$/spring5_demo4/spring5_demo4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demo5/spring5_demo5.iml" filepath="$PROJECT_DIR$/spring5_demo5/spring5_demo5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_demoreactor/spring5_demoreactor.iml" filepath="$PROJECT_DIR$/spring5_demoreactor/spring5_demoreactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_txdemo1/spring5_txdemo1.iml" filepath="$PROJECT_DIR$/spring5_txdemo1/spring5_txdemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_webfluxdemo1/spring5_webfluxdemo1.iml" filepath="$PROJECT_DIR$/spring5_webfluxdemo1/spring5_webfluxdemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring5_webfluxdemo2/spring5_webfluxdemo2.iml" filepath="$PROJECT_DIR$/spring5_webfluxdemo2/spring5_webfluxdemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_demo1/springmvc_demo1.iml" filepath="$PROJECT_DIR$/springmvc_demo1/springmvc_demo1.iml" />
     </modules>
   </component>
 </project>

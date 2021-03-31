@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.dao.StudentDao">
+
+
+    <!--
+        parameterType：dao接口中方法参数的数据类型
+            parameterType他的值是Java的数据类型全限定名称或者是mybatis定义的别名（别名不是我们自己创建的是mybatis自己定义好的）
+            例如：parameterType="java.lang.Integer" 是全限定名称
+                 parameterType="int" 是mybatis定义的别名
+            注意：parameterType不是强制的，mybatis通过反射机制能够发现接口参数的数据类型
+                 所以可以没有不写，开发中一般把我们也不写这个parameterType属性
+
+         mybatis的内部执行sql的机制
+         PreparedStatement对象执行sql语句操作数据库效率高、速度快、更安全没有sql注入的风险，建议用#占位符的方式
+        使用#{}之后，mybatis执行sql是使用JDBC中的PreparedStatement对象
+        有mybatis执行下面的代码：
+            1、mybatis创建Connection、PreparedStatement对象
+            String sql = "select id,name,email,age from t_student where id = ?";  当mybatis遇到#号后自动转为?占位符
+            通过连接对象创建PreparedStatement对象
+            PreparedStatement pst = conn.preparedStatement(sql)
+            传值
+            pst.setInt(1,1001);（占位符，值）
+            2、Student student = dao.selectStudentById(1004);相当于下面的步骤
+            执行sql封装为 resultType="com.bjpowernode.entity.Student"这个对象
+            ResultSet rs = pst.executeQuery();
+            Student student = null;
+            while(rs.next()){
+                //从数据库中取表的一行数据，存到一个Java对象属性中
+                student = new Student();
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setEmail(rs.getString("email"));
+                student.setAge(rs.getInt("age"))
+            }
+            return student; //赋给了dao方法调用的返回值
+
+            只要把sql语句和转换的信息给mybatis就可以开始做上面的操作，创建连接，访问数据库，操作数据，由mybatis创建对象给属性赋值
+            mybatis创建对象是要用Javabean里的无参构造取创建对象和get、set方法才能正确赋值
+            mybatis的sql语句中的一个#{}相当于对应的一个占位符'?'
+    -->
+    <select id="selectStudentById" parameterType="int" resultType="Student">
+        select id,name,email,age from t_student where id = ${id}
+    </select>
+
+    <!--多个参数，使用@Param命名-->
+    <select id="selectMultiParam" resultType="Student">
+        select id,name,email,age from t_student where name = #{myname} or age = #{myage}
+    </select>
+
+    <select id="selectStudentReturnViewStudent" resultType="ViewStudent">
+        select id,name,email,age from t_student where id = #{myid}
+    </select>
+
+    <!--sql执行返回一行一列-->
+    <select id="selectCount" resultType="int">
+        select count(*) from t_student
+    </select>
+
+    <!--sql执行返回map
+        1）列名是map的key，列值是map的value
+        2）最多只能返回一行记录，多余一行是错误的
+    -->
+    <select id="selectMapById" resultType="java.util.Map">
+        select id,name,email,age from t_student where id = #{myid}
+    </select>
+
+    <!--
+        使用resultMap[可以复用，多次使用，且对应关系更加灵活自己可以自定义对应关系]
+        1）先定义resultMap
+        2）在select标签中，使用resultMap来引用1定义的
+    -->
+    <!--定义resultMap
+        1）id：自定义名称，表示你自定义的这个resultMap
+        2）type：java类型的全限定名称
+    -->
+    <resultMap id="student" type="com.bjpowernode.entity.Student">
+        <!--列名和java属性的关系-->
+        <!--
+            主键列：使用id标签
+            column：列名
+            property：java类型的属性名
+        -->
+        <id column="id" property="id"/>
+        <!--非主键列，使用result-->
+        <result column="name" property="email"/>
+        <result column="email" property="name"/>
+        <result column="age" property="age"/>
+    </resultMap>
+    
+    <select id="selectAllStudents" resultMap="student">
+        select id,name,email,age from t_student
+    </select>
+
+    <resultMap id="myStudentMap" type="com.bjpowernode.entity.MyStudent">
+        <id column="id" property="stuId"/>
+        <result column="name" property="stuName"/>
+        <result column="email" property="stuEmail"/>
+        <result column="age" property="stuAge"/>
+    </resultMap>
+
+    <!--列名和属性值不一致 第一种方式（推荐使用的方式）-->
+    <select id="selectAllMyStudents" resultMap="myStudentMap">
+        select id,name,email,age from t_student
+    </select>
+
+    <!--列名和属性值不一致 第二种方式（使用resultType，sql语句使用别名与java对象中的属性对应）
+        resultType的默认原则是：数据库同名的列赋值给java对象中同名的属性，，，使用别名实现同名对应(数据库列别名就是java 对象的属性名)
+    -->
+    <select id="selectDiffColProperty" resultType="com.bjpowernode.entity.MyStudent">
+        select id as stuId,name as stuName,email as stuEmail,age as stuAge from t_student
+    </select>
+
+    <!--第一种like，java代码中指定like的内容-->
+    <select id="selectLikeOne" resultType="com.bjpowernode.entity.Student">
+        select id,name,email,age from t_student where name like #{name}
+    </select>
+
+    <!--第二种like，mapper文件中指定like内容-->
+    <select id="selectLikeTwo" resultType="com.bjpowernode.entity.Student">
+        <!--select id,name,email,age from t_student where name like '%${name}%'   第一种写法-->
+        <!--第二种写法（针对于sqlserver的写法） mysql的写法是 "%" #{name} "%"注意"%"与#{占位符}之间是有一个空格的 -->
+        select id,name,email,age from t_student where name like '%'+#{name}+'%'
+    </select>
+</mapper>
+

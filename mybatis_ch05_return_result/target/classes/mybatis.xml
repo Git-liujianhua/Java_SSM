@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--settings:空值mybatis全局行为-->
+    <settings>
+        <!--
+            设置mybatis输出日志
+            logImpl：表示要控制日志
+            STDOUT_LOGGING：表示把日志输出到控制台的
+        -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--定义别名-->
+    <typeAliases>
+        <!--
+            第一种方式
+            可以指定一个类型一个自定义别名
+            type：自定义类型的全限定名
+            alias：自定义别名(短小容易记忆的)
+        -->
+<!--        <typeAlias type="com.bjpowernode.entity.Student" alias="stu"/>-->
+<!--        <typeAlias type="com.bjpowernode.vo.ViewStudent" alias="viewStu"/>-->
+        <!--
+            第二种方式
+            <package> name 包名，这个包中所有的类，类名就是别名（类名不区分大小写）
+        -->
+        <package name="com.bjpowernode.entity"/>
+        <package name="com.bjpowernode.vo"/>
+    </typeAliases>
+
+    <!--环境配置：数据库的连接信息
+        default：必须和某个environment的id值一样
+        告诉mybatis使用哪个数据库的连接信息，也就是访问哪个数据库
+    -->
+    <environments default="sqlserver">
+        <!--environment：一个数据库信息的配置，环境
+            id：一个唯一值，自定义，表示环境的名称
+        -->
+        <environment id="sqlserver">
+            <!--transactionManager：mybatis的事务类型
+                type(值有两个)：JDBC（表示使用jdbc中的Connection对象的commit，rollback做事务处理）
+            -->
+            <transactionManager type="JDBC"/>
+            <!--
+                dataSource：表示数据源，连接数据库的
+                    type：表是数据源的类型，POOLED表示使用连接池
+            -->
+            <dataSource type="POOLED">
+                <!--driver,url,username,password是固定的不能自定义-->
+                <!--数据库的驱动名-->
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <!--连接数据库的url字符串-->
+                <property name="url" value="jdbc:sqlserver://localhost:1433;DatabaseName=user_db"/>
+                <!--访问数据库的用户名-->
+                <property name="username" value="sa"/>
+                <!--访问数据库的密码-->
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--sql mapper（sql映射文件）的位置-->
+    <mappers>
+        <!--一个mapper标签指定一个文件的位置
+            从类路径开始的路径信息，target/classes（类路径）
+            <mappers>标签下可以添加多个<mapper>标签
+        -->
+        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>
+    </mappers>
+</configuration>
+
+        <!--
+    mybatis的主配置文件：主要定义了数据库的配置信息，sql映射文件
+
+    1、约束文件
+    <!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    mybatis-3-config.dtd  约束文件的名称
+
+    2、configuration  根标签
+
+-->
