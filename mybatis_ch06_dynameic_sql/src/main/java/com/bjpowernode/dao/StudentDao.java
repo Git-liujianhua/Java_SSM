@@ -27,4 +27,10 @@ public interface StudentDao {
      * foreach使用的用法2 循环对象
      */
     public List<Student> selectStudentForEachTwo(List<Student> stulist);
+
+    /**
+     * 使用PageHelper分页数据，查询所有
+     */
+
+    public List<Student> selectStudentAllPageHelper();
 }

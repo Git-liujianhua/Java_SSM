@@ -4,6 +4,7 @@ package com.bjpowernode.test;
 import com.bjpowernode.dao.StudentDao;
 import com.bjpowernode.entity.Student;
 import com.bjpowernode.utils.MyBatisUtils;
+import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -95,6 +96,20 @@ public class StudentDaoTest {
         student.setId(1002);
         studentList.add(student);
         List<Student> students = dao.selectStudentForEachTwo(studentList);
+        for (Student stu : students){
+            System.out.println(stu);
+        }
+    }
+
+    @Test
+    public void selectStudentAllPageHelperTest(){
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        StudentDao dao = sqlSession.getMapper(StudentDao.class);
+        //加入PageHelper的方法，分页
+        //pageNum：第几页，从1开始
+        //pageSize：一页中有多少行数据
+        PageHelper.startPage(3,3);
+        List<Student> students = dao.selectStudentAllPageHelper();
         for (Student stu : students){
             System.out.println(stu);
         }

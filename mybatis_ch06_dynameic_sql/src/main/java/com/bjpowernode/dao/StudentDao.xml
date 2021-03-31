@@ -54,5 +54,10 @@
         </foreach>
     </select>
 
+    <!--查询所有-->
+    <select id="selectStudentAllPageHelper" resultType="com.bjpowernode.entity.Student">
+        <include refid="studentSql"/>
+    </select>
+
 </mapper>
 

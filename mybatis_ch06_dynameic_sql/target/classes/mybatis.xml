@@ -4,6 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!--指定properties文件的位置，从类路径根目录开始找文件-->
+    <properties resource="jdbc.properties"/>
+
     <!--settings:空值mybatis全局行为-->
     <settings>
         <!--
@@ -30,6 +33,11 @@
         <package name="com.bjpowernode.vo"/>
     </typeAliases>
 
+    <!--配置插件，插件是加载环境配置之前的-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
     <!--环境配置：数据库的连接信息
         default：必须和某个environment的id值一样
         告诉mybatis使用哪个数据库的连接信息，也就是访问哪个数据库
@@ -42,21 +50,36 @@
             <!--transactionManager：mybatis的事务类型
                 type(值有两个)：JDBC（表示使用jdbc中的Connection对象的commit，rollback做事务处理）
             -->
+            <!--
+                transactionManager：mybatis提交事务，回滚事务的方式
+                type：事务的处理类型
+                    1）JDBC：表示mybatis底层是调用JDBC中的Connection对象的，commit，rollback
+                    2）MANAGED：表示mybatis的事务处理委托给其他的容器（一个服务器软件，一个框架（Spring））
+            -->
             <transactionManager type="JDBC"/>
             <!--
                 dataSource：表示数据源，连接数据库的
                     type：表是数据源的类型，POOLED表示使用连接池
             -->
+            <!--
+                dataSource：表示数据源，java体系中，规定实现了javax.sql.DataSource接口的都是数据源
+                            数据源表示Connection对象的连接
+                type：指定数据源的类型
+                        1）POOLED：使用连接池，mybatis会创建PooledDataSource类
+                        2）UPOOLED（没有池的概念一般不会使用）：不使用连接池，在每次执行sql语句，先创建连接，再执行sql，再关闭连接
+                                    mybatis会创建一个UnPooledDataSource，管理Connection对象的使用
+                        3）JNDI：java命名和目录服务（类似于windows的注册表，服务的启动的使用，很老了一般不使用了，知道名词即可，使用比较复杂）
+            -->
             <dataSource type="POOLED">
                 <!--driver,url,username,password是固定的不能自定义-->
                 <!--数据库的驱动名-->
-                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="driver" value="${jdbc.driver}"/>
                 <!--连接数据库的url字符串-->
-                <property name="url" value="jdbc:sqlserver://localhost:1433;DatabaseName=user_db"/>
+                <property name="url" value="${jdbc.url}"/>
                 <!--访问数据库的用户名-->
-                <property name="username" value="sa"/>
+                <property name="username" value="${jdbc.username}"/>
                 <!--访问数据库的密码-->
-                <property name="password" value="1234"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
@@ -66,7 +89,20 @@
             从类路径开始的路径信息，target/classes（类路径）
             <mappers>标签下可以添加多个<mapper>标签
         -->
-        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>
+        <!--第一种方式  ：指定多个mapper文件，一个mapper文件需要一个<mapper>的标签去定义路径-->
+<!--        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>-->
+
+        <!--
+            第二种方式：使用包名
+            name：xml文件（mapper映射文件）所在的包名，这个包中所有xml映射文件一次都能加载给mybatis
+            package标签和mapper标签一样可以写多个
+            使用package标签的要求
+                1、mapper文件名称需要和接口名称一模一样，区分大小写
+                2、mapper文件和dao接口需要在同一目录下
+        -->
+        <package name="com.bjpowernode.dao"/>
+<!--        <package name="com.bjpowernode.dao2"/>-->
+<!--        <package name="com.bjpowernode.dao3"/>-->
     </mappers>
 </configuration>
 

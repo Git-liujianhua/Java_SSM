@@ -4,6 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!--指定properties文件的位置，从类路径根目录开始找文件-->
+    <properties resource="jdbc.properties"/>
+
     <!--settings:空值mybatis全局行为-->
     <settings>
         <!--
@@ -29,6 +32,11 @@
         <package name="com.bjpowernode.entity"/>
         <package name="com.bjpowernode.vo"/>
     </typeAliases>
+
+    <!--配置插件，插件是加载环境配置之前的-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
 
     <!--环境配置：数据库的连接信息
         default：必须和某个environment的id值一样
@@ -65,13 +73,13 @@
             <dataSource type="POOLED">
                 <!--driver,url,username,password是固定的不能自定义-->
                 <!--数据库的驱动名-->
-                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="driver" value="${jdbc.driver}"/>
                 <!--连接数据库的url字符串-->
-                <property name="url" value="jdbc:sqlserver://localhost:1433;DatabaseName=user_db"/>
+                <property name="url" value="${jdbc.url}"/>
                 <!--访问数据库的用户名-->
-                <property name="username" value="sa"/>
+                <property name="username" value="${jdbc.username}"/>
                 <!--访问数据库的密码-->
-                <property name="password" value="1234"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
@@ -81,7 +89,20 @@
             从类路径开始的路径信息，target/classes（类路径）
             <mappers>标签下可以添加多个<mapper>标签
         -->
-        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>
+        <!--第一种方式  ：指定多个mapper文件，一个mapper文件需要一个<mapper>的标签去定义路径-->
+<!--        <mapper resource="com/bjpowernode/dao/StudentDao.xml"/>-->
+
+        <!--
+            第二种方式：使用包名
+            name：xml文件（mapper映射文件）所在的包名，这个包中所有xml映射文件一次都能加载给mybatis
+            package标签和mapper标签一样可以写多个
+            使用package标签的要求
+                1、mapper文件名称需要和接口名称一模一样，区分大小写
+                2、mapper文件和dao接口需要在同一目录下
+        -->
+        <package name="com.bjpowernode.dao"/>
+<!--        <package name="com.bjpowernode.dao2"/>-->
+<!--        <package name="com.bjpowernode.dao3"/>-->
     </mappers>
 </configuration>
 

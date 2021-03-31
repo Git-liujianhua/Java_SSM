@@ -26,6 +26,13 @@
       <version>3.5.6</version>
     </dependency>
 
+    <!--PageHelper依赖-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>5.2.0</version>
+    </dependency>
+
     <!--sqlserver的驱动-->
     <dependency>
       <groupId>com.microsoft.sqlserver</groupId>
