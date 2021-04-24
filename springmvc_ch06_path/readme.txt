@@ -1,0 +1,1 @@
+springmvc_ch06_path：解决jsp页面中的路劲问题，用"/" 还是不用"/"

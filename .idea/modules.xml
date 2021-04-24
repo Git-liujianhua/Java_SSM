@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch01_spring5_mybatis/ch01_spring5_mybatis.iml" filepath="$PROJECT_DIR$/ch01_spring5_mybatis/ch01_spring5_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch02_springmvc_spring5_mybatis/ch02_springmvc_spring5_mybatis.iml" filepath="$PROJECT_DIR$/ch02_springmvc_spring5_mybatis/ch02_springmvc_spring5_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch03_ssm_demo/ch03_ssm_demo.iml" filepath="$PROJECT_DIR$/ch03_ssm_demo/ch03_ssm_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_ch01_hellomybatis/mybatis_ch01_hellomybatis.iml" filepath="$PROJECT_DIR$/mybatis_ch01_hellomybatis/mybatis_ch01_hellomybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_ch02_dao/mybatis_ch02_dao.iml" filepath="$PROJECT_DIR$/mybatis_ch02_dao/mybatis_ch02_dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_ch03_dao_proxy/mybatis_ch03_dao_proxy.iml" filepath="$PROJECT_DIR$/mybatis_ch03_dao_proxy/mybatis_ch03_dao_proxy.iml" />
@@ -17,6 +20,13 @@
       <module fileurl="file://$PROJECT_DIR$/spring5_txdemo1/spring5_txdemo1.iml" filepath="$PROJECT_DIR$/spring5_txdemo1/spring5_txdemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring5_webfluxdemo1/spring5_webfluxdemo1.iml" filepath="$PROJECT_DIR$/spring5_webfluxdemo1/spring5_webfluxdemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring5_webfluxdemo2/spring5_webfluxdemo2.iml" filepath="$PROJECT_DIR$/spring5_webfluxdemo2/spring5_webfluxdemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch01_helloworld/springmvc_ch01_helloworld.iml" filepath="$PROJECT_DIR$/springmvc_ch01_helloworld/springmvc_ch01_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch02_requestmapping/springmvc_ch02_requestmapping.iml" filepath="$PROJECT_DIR$/springmvc_ch02_requestmapping/springmvc_ch02_requestmapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch03_recevieparam/springmvc_ch03_recevieparam.iml" filepath="$PROJECT_DIR$/springmvc_ch03_recevieparam/springmvc_ch03_recevieparam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch04_return/springmvc_ch04_return.iml" filepath="$PROJECT_DIR$/springmvc_ch04_return/springmvc_ch04_return.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch05_url-pattern/springmvc_ch05_url-pattern.iml" filepath="$PROJECT_DIR$/springmvc_ch05_url-pattern/springmvc_ch05_url-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch06_path/springmvc_ch06_path.iml" filepath="$PROJECT_DIR$/springmvc_ch06_path/springmvc_ch06_path.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_ch07_forward_redirect/springmvc_ch07_forward_redirect.iml" filepath="$PROJECT_DIR$/springmvc_ch07_forward_redirect/springmvc_ch07_forward_redirect.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc_demo1/springmvc_demo1.iml" filepath="$PROJECT_DIR$/springmvc_demo1/springmvc_demo1.iml" />
     </modules>
   </component>

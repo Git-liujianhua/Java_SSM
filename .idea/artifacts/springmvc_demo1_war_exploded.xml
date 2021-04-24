@@ -7,6 +7,16 @@
         <element id="directory" name="classes">
           <element id="module-output" name="springmvc_demo1" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/commons-logging-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-aop-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-beans-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-context-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-core-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-expression-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-web-5.2.9.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/springmvc_demo1/web/WEB-INF/lib/spring-webmvc-5.2.9.RELEASE.jar" />
+        </element>
       </element>
     </root>
   </artifact>
