@@ -6,27 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis_ch03_dao_proxy" />
         <module name="spring5_demoreactor" />
-        <module name="ch02_springmvc_spring5_mybatis" />
         <module name="springmvc_ch04_return" />
         <module name="springmvc_ch05_url-pattern" />
         <module name="mybatis_ch04_param" />
         <module name="springmvc_ch02_requestmapping" />
-        <module name="springmvc_ch01_helloworld" />
+        <module name="springmvc_ch11_handlerinterceptor_permission" />
         <module name="springmvc_ch06_path" />
-        <module name="ch03_ssm_demo" />
         <module name="ch02_spring5_springmvc_mybatis" />
-        <module name="springmvc_ch02" />
         <module name="spring5_webfluxdemo1" />
         <module name="spring5_webfluxdemo2" />
         <module name="mybatis_ch02_dao" />
+        <module name="springmvc_ch07_forward_redirect" />
+        <module name="springmvc_ch09_handlerinterceptor" />
+        <module name="mybatis_ch03_dao_proxy" />
+        <module name="springmvc_ch08_exception_handler" />
+        <module name="ch02_springmvc_spring5_mybatis" />
+        <module name="springmvc_ch01_helloworld" />
+        <module name="ch03_ssm_demo" />
+        <module name="springmvc_ch02" />
         <module name="ch01_spring5_mybatis" />
         <module name="springmvc_ch03_recevieparam" />
         <module name="mybatis_ch06_dynameic_sql" />
+        <module name="springmvc_ch10_handlerinterceptor2" />
         <module name="mybatis_ch01_hellomybatis" />
         <module name="mybatis_ch05_return_result" />
-        <module name="springmvc_ch07_forward_redirect" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -55,6 +59,10 @@
       <module name="springmvc_ch06_path" target="1.8" />
       <module name="springmvc_ch06_path (1)" target="1.8" />
       <module name="springmvc_ch07_forward_redirect" target="1.8" />
+      <module name="springmvc_ch08_exception_handler" target="1.8" />
+      <module name="springmvc_ch09_handlerinterceptor" target="1.8" />
+      <module name="springmvc_ch10_handlerinterceptor2" target="1.8" />
+      <module name="springmvc_ch11_handlerinterceptor_permission" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

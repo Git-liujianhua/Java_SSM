@@ -29,5 +29,13 @@
     <file url="file://$PROJECT_DIR$/springmvc_ch06_path/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springmvc_ch07_forward_redirect/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springmvc_ch07_forward_redirect/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch08_exception_handler/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch08_exception_handler/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch09_handlerinterceptor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch09_handlerinterceptor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch10_handlerinterceptor2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch10_handlerinterceptor2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch11_handlerinterceptor_permission/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc_ch11_handlerinterceptor_permission/src/main/resources" charset="UTF-8" />
   </component>
 </project>

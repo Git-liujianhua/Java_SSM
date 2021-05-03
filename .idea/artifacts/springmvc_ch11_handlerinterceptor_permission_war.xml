@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springmvc_ch11_handlerinterceptor_permission:war">
+    <output-path>$PROJECT_DIR$/springmvc_ch11_handlerinterceptor_permission/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springmvc_ch11_handlerinterceptor_permission</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springmvc_ch11_handlerinterceptor_permission-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="springmvc_ch11_handlerinterceptor_permission:war exploded" />
+    </root>
+  </artifact>
+</component>
