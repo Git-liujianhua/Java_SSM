@@ -127,7 +127,7 @@
                 url:"student/getStudentById.do/"+id,
                 type:"get",
                 success:function (result){
-                    // console.log(result)
+                    //console.log(result)
                     var stu = result.extend.student;
                     $("#stuId_update_input").val(stu.id)
                     $("#stuName_update_input").val(stu.name)
@@ -145,6 +145,7 @@
                 type:"get",
                 dataType:"json",
                 success:function (result){
+                    console.log(result)
                     //调用解析数据的function
                     build_student(result);
                     //调用解析分页信息的function
@@ -160,6 +161,7 @@
             $("#student_table tbody").empty();
             //获取分页数据
             var student = result.extend.pageInfo.list;
+
             //遍历
             $.each(student,function (n,i){
                 var checkbox = $("<td></td>").append("<input type='checkbox' class='checkbox_item'>")
@@ -391,7 +393,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
                 </table>
             </div>
