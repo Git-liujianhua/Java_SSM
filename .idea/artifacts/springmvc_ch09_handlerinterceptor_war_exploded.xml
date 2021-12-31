@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>springmvc_ch09_handlerinterceptor</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">

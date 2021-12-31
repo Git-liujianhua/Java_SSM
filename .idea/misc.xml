@@ -50,6 +50,8 @@
         <option value="$PROJECT_DIR$/springmvc_ch09_handlerinterceptor/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_ch10_handlerinterceptor2/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc_ch11_handlerinterceptor_permission/pom.xml" />
+        <option value="$PROJECT_DIR$/spring5_demoreactor/pom.xml" />
+        <option value="$PROJECT_DIR$/spring5_webfluxdemo2/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

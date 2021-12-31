@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>springmvc_ch06_path</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
